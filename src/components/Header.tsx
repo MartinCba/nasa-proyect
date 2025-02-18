@@ -4,12 +4,15 @@ import { StyleSheet } from "react-native";
 
 export const Header = () => {
   return (
-    <View>
-      <View>
-        <Text>Header</Text>
+    <View style={styles.container}>
+      <View style={styles.leftContainer}>
+        <Text style={styles.title}>Header</Text>
       </View>
-      <View>
-        <Image source={require('../../assets/nasa-logo.png')} />
+      <View style={styles.rightContainer}>
+        <Image
+          source={require("../../assets/nasa-logo.png")}
+          style={styles.image}
+        />
       </View>
     </View>
   );
@@ -17,9 +20,24 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+  },
+  leftContainer: {
+    flex: 1,
+    alignItems: "flex-start",
+  },
+  rightContainer: {
+    flex: 1,
+    alignItems: "flex-end",
+  },
+  title: {
+    fontSize: 20,
+    color: "white",
+
+  },
+  image: {
+    width: 60,
+    height: 60,
   },
 });
