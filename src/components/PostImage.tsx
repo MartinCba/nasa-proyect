@@ -1,11 +1,10 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { PostImageType } from "../types/index";
 import { FC } from "react";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { PostImageType } from "../types";
 
-export const TodaysImage: FC<PostImageType> = ({ date, title, url }) => {
+export const PostImage: FC<PostImageType> = ({ title, date }) => {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: url }} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.date}>{date}</Text>
       <TouchableOpacity style={styles.button} onPress={() => {}}>
@@ -17,24 +16,15 @@ export const TodaysImage: FC<PostImageType> = ({ date, title, url }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2c449d",
-    marginVertical: 16,
-    marginHorizontal: 24,
-    borderRadius: 32,
+    backgroundColor: "rgba(18,39,113,255)",
+    marginBottom: 12,
+    borderRadius: 20,
     padding: 16,
-  },
-
-  image: {
-    width: "100%",
-    height: 190,
-    borderRadius: 32,
-    borderWidth: 2,
-    borderColor: "white",
   },
   title: {
     color: "white",
-    fontSize: 20,
-    marginVertical: 12,
+    fontSize: 18,
+    marginBottom: 12,
     fontWeight: "bold",
   },
   date: {
