@@ -1,11 +1,12 @@
-import { View, StyleSheet } from "react-native";
-import { Header } from "../components/Header";
+import { View } from "react-native";
+import { Header } from "../../components/Header/Header";
 import { useEffect, useState } from "react";
-import fetchApi from "../utils/fetch";
-import { TodaysImage } from "../components/TodaysImage";
-import { PostImageType } from "../types";
+import fetchApi from "../../utils/fetch";
+import { TodaysImage } from "../../components/TodaysImage/TodaysImage";
+import { PostImageType } from "../../types";
 import { format, sub } from "date-fns";
-import { LastFiveDaysImages } from "../components/LastFiveDaysImages";
+import { LastFiveDaysImages } from "../../components/LastFiveImages/LastFiveDaysImages";
+import { styles } from "./Home.styles";
 
 export const Home = () => {
   const [todaysImage, setTodaysImage] = useState<PostImageType>({});
@@ -52,10 +53,3 @@ export const Home = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 16,
-    backgroundColor: "rgba(7,26,93,255)",
-  },
-});

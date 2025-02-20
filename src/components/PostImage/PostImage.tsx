@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { PostImageType, RootStackParams } from "../types";
+import { Text, View, TouchableOpacity } from "react-native";
+import { PostImageType, RootStackParams } from "../../types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
+import { styles } from "./PostImage.styles";
 
 type PostImageNavigationProps = NativeStackNavigationProp<
   RootStackParams,
@@ -29,29 +30,3 @@ export const PostImage: FC<PostImageType> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "rgba(18,39,113,255)",
-    marginBottom: 12,
-    borderRadius: 20,
-    padding: 16,
-  },
-  title: {
-    color: "white",
-    fontSize: 18,
-    marginBottom: 12,
-    fontWeight: "bold",
-  },
-  date: {
-    color: "white",
-    fontSize: 16,
-  },
-  button: {
-    alignItems: "flex-end",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-  },
-});
