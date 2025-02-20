@@ -12,6 +12,7 @@ const routeScreenDefaultOptions = {
   headerTitleStyle: {
     color: "white",
   },
+  headerTintColor: "white",
   headerTitleAlign: "center" as "center",
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
+import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../types";
@@ -20,10 +20,6 @@ export const Detail = () => {
           <Text style={styles.explanation}>{explanation}</Text>
         </ScrollView>
       </View>
-
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <Text style={styles.buttonText}>View</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -68,6 +64,4 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16
   },
-  button: {},
-  buttonText: {},
 });
