@@ -25,12 +25,15 @@ export const Home = () => {
     const loadLast5Images = async () => {
       try {
         const date = new Date();
-        const todaysDate = format(date, "yyyy-MM-dd");
+        const yesterdayDate = format(sub(date, { days: 1 }), "yyyy-MM-dd");
         const fiveDaysAgoDate = format(sub(date, { days: 5 }), "yyyy-MM-dd");
         const lastFiveDaysImagesResponse = await fetchApi(
-          `&start_date=${fiveDaysAgoDate}&end_date=${todaysDate}`
+          `&start_date=${fiveDaysAgoDate}&end_date=${yesterdayDate}`
         );
-        setLast5DaysImages(lastFiveDaysImagesResponse);
+        const sortedImages = lastFiveDaysImagesResponse.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+        setLast5DaysImages(sortedImages);
       } catch (error) {
         console.error(error);
       }
@@ -53,5 +56,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
+    backgroundColor: "rgba(7,26,93,255)",
   },
 });

@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
-        <Text style={styles.title}>Header</Text>
+        <Text style={styles.title}>Explore</Text>
       </View>
       <View style={styles.rightContainer}>
         <Image
